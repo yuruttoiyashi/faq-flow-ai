@@ -1,0 +1,434 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #0f172a;
+  background: #eef2ff;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.26), transparent 28rem),
+    linear-gradient(135deg, #eef2ff 0%, #f8fafc 45%, #ecfeff 100%);
+  padding: 28px;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.8fr);
+  gap: 20px;
+  align-items: stretch;
+  margin-bottom: 22px;
+}
+
+.hero-card,
+.panel,
+.stat-card,
+.ticket-card,
+.report-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+}
+
+.hero-card {
+  padding: 28px;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #4f46e5;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 12px 0 10px;
+  font-size: clamp(30px, 4vw, 54px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.hero p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-side {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-side h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.hero-side ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #475569;
+  line-height: 1.9;
+}
+
+.grid {
+  display: grid;
+  gap: 18px;
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-main {
+  grid-template-columns: minmax(340px, 0.85fr) minmax(0, 1.45fr);
+  align-items: start;
+}
+
+.stat-card {
+  padding: 18px;
+}
+
+.stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.stat-value {
+  margin-top: 10px;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.panel {
+  padding: 22px;
+}
+
+.panel h2 {
+  margin: 0 0 14px;
+  font-size: 20px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.two-cols {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 12px;
+  font-weight: 800;
+  color: #334155;
+}
+
+.field input,
+.field select,
+.field textarea {
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 12px 13px;
+  outline: none;
+  transition: 0.15s ease;
+}
+
+.field textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.14);
+}
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.search {
+  flex: 1;
+  min-width: 220px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 999px;
+  padding: 11px 15px;
+  font-weight: 800;
+  transition: 0.16s ease;
+  color: #0f172a;
+  background: #e2e8f0;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  color: white;
+  background: linear-gradient(135deg, #4f46e5, #0891b2);
+  box-shadow: 0 12px 24px rgba(79, 70, 229, 0.22);
+}
+
+.btn-dark {
+  color: white;
+  background: #0f172a;
+}
+
+.btn-danger {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.btn-ghost {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.ticket-list {
+  display: grid;
+  gap: 12px;
+}
+
+.ticket-card {
+  padding: 16px;
+}
+
+.ticket-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.ticket-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.ticket-meta {
+  margin-top: 7px;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.ticket-content {
+  margin: 12px 0;
+  color: #334155;
+  line-height: 1.75;
+  white-space: pre-wrap;
+}
+
+.ticket-answer {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  white-space: pre-wrap;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 999px;
+  padding: 5px 9px;
+  font-size: 12px;
+  font-weight: 800;
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.badge-high {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.badge-mid {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge-low {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge-faq {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.ticket-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.ai-box {
+  margin-top: 16px;
+  padding: 14px;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+}
+
+.ai-box h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+
+.ai-output {
+  white-space: pre-wrap;
+  color: #334155;
+  line-height: 1.75;
+}
+
+.report-card {
+  padding: 18px;
+  margin-top: 18px;
+}
+
+.report-card h2 {
+  margin: 0 0 10px;
+}
+
+.report-content {
+  white-space: pre-wrap;
+  line-height: 1.8;
+  color: #334155;
+}
+
+.empty {
+  text-align: center;
+  padding: 32px;
+  color: #64748b;
+  border: 1px dashed #cbd5e1;
+  border-radius: 18px;
+  background: #f8fafc;
+}
+
+.footer-note {
+  margin-top: 18px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .grid-main,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .app {
+    padding: 18px;
+  }
+}
+
+@media print {
+  .hero-actions,
+  .toolbar,
+  .panel.form-panel,
+  .ticket-actions,
+  .btn {
+    display: none !important;
+  }
+
+  .app {
+    background: white;
+    padding: 0;
+  }
+
+  .hero-card,
+  .panel,
+  .stat-card,
+  .ticket-card,
+  .report-card {
+    box-shadow: none;
+    border: 1px solid #cbd5e1;
+  }
+}
