@@ -1,14 +1,27 @@
-name = "faq-flow-ai"
+﻿name = "faq-flow-ai"
 compatibility_date = "2026-05-27"
 pages_build_output_dir = "./dist"
 
 [[d1_databases]]
 binding = "DB"
 database_name = "faq-flow-ai-db"
-database_id = "86bca3de-9ee3-4647-bc17-88d816e0bfbc"
+database_id = "622e839d-9b6d-402f-8e1b-bd4041353a9d"
 
-# Workers AI binding for Cloudflare Pages Functions:
-# Cloudflare Dashboard > Workers & Pages > faq-flow-ai > Settings > Functions > Bindings
-# Add binding:
-# - Variable name: AI
-# - Service: Workers AI
+[ai]
+binding = "AI"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "faq-flow-ai-db"
+database_id = "622e839d-9b6d-402f-8e1b-bd4041353a9d"
+
+[env.production.ai]
+binding = "AI"
+
+[[env.preview.d1_databases]]
+binding = "DB"
+database_name = "faq-flow-ai-db"
+database_id = "622e839d-9b6d-402f-8e1b-bd4041353a9d"
+
+[env.preview.ai]
+binding = "AI"
