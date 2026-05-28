@@ -329,7 +329,10 @@ export default function App() {
               <Sparkles size={16} />
               FAQ Flow AI
             </div>
-            <h1>問い合わせ対応・FAQ改善ダッシュボード</h1>
+            <h1>
+  <span className="hero-title-line">問い合わせ対応・FAQ改善</span>
+  <span className="hero-title-line">ダッシュボード</span>
+</h1>
             <p>
               社内問い合わせや顧客対応を一元管理し、対応状況・FAQ化候補・改善ポイントを見える化します。
               Cloudflare Pages / Functions / D1 / Workers AI で動く、Firebase不要の業務改善アプリです。
